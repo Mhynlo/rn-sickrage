@@ -1,0 +1,13 @@
+<Application resource-id="sickrage"><!-- 'resource-id' must be AppName -->
+  <Name>SickRage</Name>
+  <Author>Mhynlo</Author>
+  <Version>5.1.2</Version>
+  <RequireReboot>0</RequireReboot>
+  <ConfigURL/>
+  <LaunchURL>http://localhost:8081/</LaunchURL>
+  <ReservePort>8081</ReservePort>
+  <InfoURL>https://sickrage.github.io/</InfoURL>
+  <DebianPackage>sickrage</DebianPackage>
+  <ServiceName>fvapp-sickrage.service</ServiceName>
+  <Description lang="en-us">Automatic Video Library Manager for TV Shows.</Description>
+</Application>

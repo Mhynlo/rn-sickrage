@@ -1,0 +1,16 @@
+[Unit]
+Description=Service for sickrage app
+
+[Service]
+ExecStart=/usr/bin/python /apps/sickrage/SickBeard.py -q --daemon --nolaunch --datadir=/home/app-sickrage --config=/home/app-sickrage/config.ini
+Type=forking
+TimeoutSec=200
+KillMode=process
+GuessMainPID=no
+Restart=on-failure
+Nice=20
+User=app-sickrage
+Group=applications
+
+[Install]
+WantedBy=multi-user.target
