@@ -20,10 +20,12 @@ set -e
 
 case "$1" in
     configure)
-    rn_nml -a group:applications
-    rn_nml -a user:app-sickrage:applications:$(echo -n app-sickrage | base64)
-    /sbin/mkhomedir_helper app-sickrage 022
-    chown -R app-sickrage:applications /apps/sickrage
+    mkhomedir_helper admin 027
+    chown -R admin:admin /apps/sickrage
+    if [ ! -d "/home/admin/.sickrage" ]; then
+      mkdir /home/admin/.sickrage
+      chown -R admin:admin /home/admin/.sickrage
+      fi
     event_push app readynasd '<add-s resource-type="LocalApp" resource-id="LocalApp"><LocalApp appname="sickrage" success="1"/></add-s>' 0 0
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
