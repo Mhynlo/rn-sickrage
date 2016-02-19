@@ -1,5 +1,5 @@
 #! /bin/sh
-# postrm script for sample1
+# postrm script for sickrage
 #
 # see: dh_installdeb(1)
 
@@ -18,7 +18,10 @@ set -e
 
 case "$1" in
     purge)
-       rm -rf /apps/sickrage
+       rm -f /apps/sickrage/*
+       find /apps/sickrage/* -maxdepth 0 -type 'd' | grep -v "app-config" | xargs rm -rf
+       rm /apps/sickrage/.localapp
+
        event_push app readynasd '<delete-s resource-type="LocalApp" resource-id="LocalApp"><LocalApp appname="sickrage" success="1" reboot="0"/></delete-s>' 0 0
        ;;
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

@@ -17,5 +17,5 @@ DESTDIR = $(CURDIR)/debian/sickrage
 	dh $@
 
 override_dh_install:
-	mkdir $(DESTDIR)/apps $(DESTDIR)/apps/sickrage
+	mkdir $(DESTDIR)/apps $(DESTDIR)/apps/sickrage $(DESTDIR)/apps/sickrage/app-config
 	cp -R files/* $(DESTDIR)/apps/sickrage

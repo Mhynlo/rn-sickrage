@@ -21,13 +21,7 @@ set -e
 case "$1" in
     configure)
     chown -R admin:admin /apps/sickrage
-    mkhomedir_helper admin 027
-
-    #Check/create config directory
-    if [ ! -d "/home/admin/.sickrage" ]; then
-      mkdir /home/admin/.sickrage
-      chown -R admin:admin /home/admin/.sickrage
-      fi
+    
     event_push app readynasd '<add-s resource-type="LocalApp" resource-id="LocalApp"><LocalApp appname="sickrage" success="1"/></add-s>' 0 0
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -42,10 +36,7 @@ esac
 ###
 # Enable service
 ###
-if [ -f "/lib/systemd/system/fvapp-sickrage.service" ]; then
-  systemctl enable fvapp-sickrage.service
-  systemctl start fvapp-sickrage.service
-fi
+rn_nml -S sickrage
 
 
 # dh_installdeb will replace this with shell code automatically
