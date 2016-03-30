@@ -13,4 +13,4 @@ There is a release available for download. It is able to install and run with no
 
 #####Maintenance update:
 Maintenance of SickRage is not going to reside under the SickRage Organization:
-https://github.com/SickRage/readynas-sickrage
+* https://github.com/SickRage/readynas-sickrage
