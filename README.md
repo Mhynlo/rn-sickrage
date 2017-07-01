@@ -1,4 +1,4 @@
-###rn-sickrage
+### rn-sickrage
 
 
 There is a release available for download. It is able to install and run with no reported issues to the app.
@@ -6,11 +6,11 @@ There is a release available for download. It is able to install and run with no
 
 
 
-####Build process:
+#### Build process:
 
 `debuild -us -uc`
 
 
-#####Maintenance update:
-Maintenance of SickRage is not going to reside under the SickRage Organization:
+##### Maintenance update:
+Maintenance of SickRage is now going to reside under the SickRage Organization:
 * https://github.com/SickRage/readynas-sickrage
